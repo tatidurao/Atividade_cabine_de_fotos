@@ -11,7 +11,7 @@ camera.set(3 , 640)
 camera.set(4 , 480)
 
 # carregando a imagem da montanha
-mountain = cv2.imread('2.jpeg')
+mountain = cv2.imread('')
 
 # redimensionando a imagem da montanha como 640 ,480
 mountain = cv2.resize(mountain, ())
@@ -25,23 +25,23 @@ while True:
     if status:
 
         # inverta-o
-        frame = cv2.flip(frame , 1)
+        
 
         # convertendo a imagem em RGB para facilitar o processamento
-        frame_rgb = cv2.cvtColor(frame , cv2.COLOR_BGR2RGB)
+        
 
-        # Preencha os limites que esta no passo 2 do projeto
+        # Preencha os limites
         lower_bound = np.array([])
         upper_bound = np.array([])
 
         # imagem dentro do limite
-        mask_2 = cv2.inRange(frame_rgb, lower_bound, upper_bound)
+      
         # invertendo a máscara
-        mask = cv2.bitwise_not(mask_2)
+      
         # bitwise_and - operação para extrair o primeiro plano / pessoa
-        person = cv2.bitwise_and(frame, frame, mask = mask)
+        
         # imagem final
-        final_image = np.where(person == 0, mountain, person)
+       
         # exiba-a
         cv2.imshow('quadro' , final_image)
 
